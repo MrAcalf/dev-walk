@@ -1,8 +1,19 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { cmsConnection, getPosts } from '../services/http/hive'
+
 
 const Home: NextPage = () => {
+  const getBlogData = async () => {
+    const posts = await getPosts()
+    
+    console.log(posts)
+  }
+
+  getBlogData()
+
+  
   return (
     <div>
       <Head>
